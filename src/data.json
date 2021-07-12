@@ -1,0 +1,198 @@
+[
+  {
+    "title": "steelersTonight",
+    "genre": "sports",
+    "network": "cbs",
+    "hometown": "pittsburgh",
+    "numViewers": 1000
+  },
+  {
+    "title": "steelersTonight",
+    "genre": "sports",
+    "network": "cbs",
+    "hometown": "newYork",
+    "numViewers": 200
+  },
+  {
+    "title": "steelersTonight",
+    "genre": "sports",
+    "network": "cbs",
+    "hometown": "boston",
+    "numViewers": 50
+  },
+  {
+    "title": "steelersTonight",
+    "genre": "sports",
+    "network": "cbs",
+    "hometown": "cleveland",
+    "numViewers": 5
+  },
+  {
+    "title": "theDawgPound",
+    "genre": "sports",
+    "network": "abc",
+    "hometown": "pittsburgh",
+    "numViewers": 7
+  },
+  {
+    "title": "theDawgPound",
+    "genre": "sports",
+    "network": "abc",
+    "hometown": "newYork",
+    "numViewers": 100
+  },
+  {
+    "title": "theDawgPound",
+    "genre": "sports",
+    "network": "abc",
+    "hometown": "boston",
+    "numViewers": 80
+  },
+  {
+    "title": "theDawgPound",
+    "genre": "sports",
+    "network": "abc",
+    "hometown": "cleveland",
+    "numViewers": 850
+  },
+  {
+    "title": "theExpanse",
+    "genre": "scienceFiction",
+    "network": "syfy",
+    "hometown": "pittsburgh",
+    "numViewers": 200
+  },
+  {
+    "title": "theExpanse",
+    "genre": "scienceFiction",
+    "network": "syfy",
+    "hometown": "newYork",
+    "numViewers": 750
+  },
+  {
+    "title": "theExpanse",
+    "genre": "scienceFiction",
+    "network": "syfy",
+    "hometown": "boston",
+    "numViewers": 500
+  },
+  {
+    "title": "theExpanse",
+    "genre": "scienceFiction",
+    "network": "syfy",
+    "hometown": "cleveland",
+    "numViewers": 225
+  },
+  {
+    "title": "starTrekDiscovery",
+    "genre": "scienceFiction",
+    "network": "cbs",
+    "hometown": "pittsburgh",
+    "numViewers": 175
+  },
+  {
+    "title": "starTrekDiscovery",
+    "genre": "scienceFiction",
+    "network": "cbs",
+    "hometown": "newYork",
+    "numViewers": 700
+  },
+  {
+    "title": "starTrekDiscovery",
+    "genre": "scienceFiction",
+    "network": "cbs",
+    "hometown": "boston",
+    "numViewers": 400
+  },
+  {
+    "title": "starTrekDiscovery",
+    "genre": "scienceFiction",
+    "network": "cbs",
+    "hometown": "cleveland",
+    "numViewers": 200
+  },
+  {
+    "title": "twilightZone",
+    "genre": "scienceFiction",
+    "network": "cbs",
+    "hometown": "pittsburgh",
+    "numViewers": 100
+  },
+  {
+    "title": "twilightZone",
+    "genre": "scienceFiction",
+    "network": "cbs",
+    "hometown": "newYork",
+    "numViewers": 500
+  },
+  {
+    "title": "twilightZone",
+    "genre": "scienceFiction",
+    "network": "cbs",
+    "hometown": "boston",
+    "numViewers": 200
+  },
+  {
+    "title": "twilightZone",
+    "genre": "scienceFiction",
+    "network": "cbs",
+    "hometown": "cleveland",
+    "numViewers": 100
+  },
+  {
+    "title": "crimePatrol",
+    "genre": "mystery",
+    "network": "abc",
+    "hometown": "pittsburgh",
+    "numViewers": 800
+  },
+  {
+    "title": "crimePatrol",
+    "genre": "mystery",
+    "network": "abc",
+    "hometown": "newYork",
+    "numViewers": 1200
+  },
+  {
+    "title": "crimePatrol",
+    "genre": "mystery",
+    "network": "abc",
+    "hometown": "boston",
+    "numViewers": 1000
+  },
+  {
+    "title": "crimePatrol",
+    "genre": "mystery",
+    "network": "abc",
+    "hometown": "cleveland",
+    "numViewers": 850
+  },
+  {
+    "title": "forensicFiles",
+    "genre": "mystery",
+    "network": "cbs",
+    "hometown": "pittsburgh",
+    "numViewers": 750
+  },
+  {
+    "title": "forensicFiles",
+    "genre": "mystery",
+    "network": "cbs",
+    "hometown": "newYork",
+    "numViewers": 1050
+  },
+  {
+    "title": "forensicFiles",
+    "genre": "mystery",
+    "network": "cbs",
+    "hometown": "boston",
+    "numViewers": 1100
+  },
+  {
+    "title": "forensicFiles",
+    "genre": "mystery",
+    "network": "cbs",
+    "hometown": "cleveland",
+    "numViewers": 700
+  }
+ ]

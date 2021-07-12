@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import GlobalFilter from './components/GlobalFilter.jsx'
+import SubSlices from './components/SubSlices.jsx'
 
 function App() {
+  const [titles, setTitles] = useState([])
+  const [genres, setGenres] = useState([])
+  const [networks, setNetworks] = useState([])
+  const [hometowns, setHometowns] = useState([])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalFilter
+          titles={titles}
+          setTitles={setTitles}
+          genres={genres}
+          setGenres={setGenres}
+          networks={networks}
+          setNetworks={setNetworks}
+          hometowns={hometowns}
+          setHometowns={setHometowns}
+      />
+      <SubSlices />
     </div>
   );
 }
