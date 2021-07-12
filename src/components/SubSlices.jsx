@@ -4,7 +4,7 @@ import SubChart from './SubChart.jsx'
 const SubSlices = () => {
   const [category, setCategory] = useState('title')
   const [categoryKey, setCategoryKey] = useState('steelersTonight')
-  const subOptions = ['title', 'genre', 'network', 'hometown']
+  const subOptions = ['hometown', 'title', 'network', 'genre']
   const initSubs = {
     title: 'steelersTonight',
     genre: 'sports',
@@ -60,7 +60,6 @@ const SubSlices = () => {
   }
   return (
     <div>
-      <h1>Primary Concern</h1>
       <select name="concerns" onChange={(e)=> { setCategory(e.target.value); setCategoryKey(initSubs[e.target.value])}} value={category}>
           <option value="title">Title</option>
           <option value="genre">Genre</option>
@@ -68,21 +67,24 @@ const SubSlices = () => {
           <option value="hometown">Viewer Hometown</option>
       </select>
       {SubSelect}
-      <SubChart
-        parentCategory={category}
-        categoryKey={categoryKey}
-        chartCategory={subOptions.filter(opt => opt !== category)[0]}
-      />
-      <SubChart
-        parentCategory={category}
-        categoryKey={categoryKey}
-        chartCategory={subOptions.filter(opt => opt !== category)[1]}
-      />
-      <SubChart
-        parentCategory={category}
-        categoryKey={categoryKey}
-        chartCategory={subOptions.filter(opt => opt !== category)[2]}
-      />
+      <h1>Subdivide {category} / {categoryKey} by...</h1>
+      <div style={{display: 'flex', justifyContent: 'space-between'}}>
+        <SubChart
+          parentCategory={category}
+          categoryKey={categoryKey}
+          chartCategory={subOptions.filter(opt => opt !== category)[0]}
+        />
+        <SubChart
+          parentCategory={category}
+          categoryKey={categoryKey}
+          chartCategory={subOptions.filter(opt => opt !== category)[1]}
+        />
+        <SubChart
+          parentCategory={category}
+          categoryKey={categoryKey}
+          chartCategory={subOptions.filter(opt => opt !== category)[2]}
+        />
+      </div>
     </div>
   )
 }
