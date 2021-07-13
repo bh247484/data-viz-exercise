@@ -11,11 +11,14 @@ div#root {
   max-width: 1300px;
 }
 
-h1.header-title {
+.header-title {
+  display: flex;
+  align-items: center;
   color: white;
-  font-size: 40px;
+  font-size: 24px;
   margin-bottom: 8px;
 }
+.header-title h1 { margin-left: 12px; }
 
 /* Shared Card Styles */
 
