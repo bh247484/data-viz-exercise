@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import SubChart from './SubChart.jsx'
+import CircleChart from './CircleChart.jsx'
 
-const SubSlices = () => {
-  const [category, setCategory] = useState('title')
-  const [categoryKey, setCategoryKey] = useState('steelersTonight')
+const Comparative = () => {
+  const [category, setCategory] = useState('network')
+  const [categoryKey, setCategoryKey] = useState('cbs')
   const subOptions = ['hometown', 'title', 'network', 'genre']
+  
+  // Used below on line 70 to ensure there's a default entry for secondary selects
   const initSubs = {
     title: 'steelersTonight',
     genre: 'sports',
@@ -12,10 +14,11 @@ const SubSlices = () => {
     hometown: 'pittsburgh'
   }
 
-  let SubSelect
+  // Changes secondary select input based on the primary's value
+  let SecondarySelect
   switch(category) {
     case 'title':
-      SubSelect = (
+      SecondarySelect = (
         <select name="title" onChange={(e)=> setCategoryKey(e.target.value)} value={categoryKey}>
             <option value="steelersTonight">Steelers Tonight!</option>
             <option value="theDawgPound">The Dawg Pound</option>
@@ -28,7 +31,7 @@ const SubSlices = () => {
       )
       break;
     case 'genre':
-      SubSelect = (
+      SecondarySelect = (
         <select name="genre" onChange={(e)=> setCategoryKey(e.target.value)} value={categoryKey}>
             <option value="sports">Sports</option>
             <option value="scienceFiction">Science Fiction</option>
@@ -37,7 +40,7 @@ const SubSlices = () => {
       )
       break;
     case 'network':
-      SubSelect = (
+      SecondarySelect = (
         <select name="network" onChange={(e)=> setCategoryKey(e.target.value)} value={categoryKey}>
             <option value="cbs">CBS</option>
             <option value="abc">ABC</option>
@@ -46,7 +49,7 @@ const SubSlices = () => {
       )
       break;
     case 'hometown':
-      SubSelect = (
+      SecondarySelect = (
         <select name="hometown" onChange={(e)=> setCategoryKey(e.target.value)} value={categoryKey}>
             <option value="pittsburgh">Pittsburgh</option>
             <option value="newYork">New York</option>
@@ -56,30 +59,38 @@ const SubSlices = () => {
       )
       break;
     default:
-      SubSelect = (<span>Placeholder</span>)
+      SecondarySelect = (<span>Placeholder</span>)
   }
+
   return (
-    <div>
-      <select name="concerns" onChange={(e)=> { setCategory(e.target.value); setCategoryKey(initSubs[e.target.value])}} value={category}>
+    <div className="comparative-container">
+      <h1 className="comparative-title">Comparative</h1>
+      <div className="comp-select-heading">
+        <h2>Subdivide</h2>
+        <select name="concerns" onChange={(e)=> { setCategory(e.target.value); setCategoryKey(initSubs[e.target.value])}} value={category}>
           <option value="title">Title</option>
           <option value="genre">Genre</option>
           <option value="network">Network</option>
           <option value="hometown">Viewer Hometown</option>
-      </select>
-      {SubSelect}
-      <h1>Subdivide {category} / {categoryKey} by...</h1>
+        </select>
+        <h2> / </h2>
+        {SecondarySelect}
+        <h2>by...</h2>
+      </div>
       <div style={{display: 'flex', justifyContent: 'space-between'}}>
-        <SubChart
+        <CircleChart
           parentCategory={category}
           categoryKey={categoryKey}
+          // Line below is used to determine which three remaining columns
+          // should be compared against the primary column the user selected
           chartCategory={subOptions.filter(opt => opt !== category)[0]}
         />
-        <SubChart
+        <CircleChart
           parentCategory={category}
           categoryKey={categoryKey}
           chartCategory={subOptions.filter(opt => opt !== category)[1]}
         />
-        <SubChart
+        <CircleChart
           parentCategory={category}
           categoryKey={categoryKey}
           chartCategory={subOptions.filter(opt => opt !== category)[2]}
@@ -89,4 +100,4 @@ const SubSlices = () => {
   )
 }
 
-export default SubSlices
+export default Comparative

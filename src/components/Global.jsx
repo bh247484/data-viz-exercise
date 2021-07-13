@@ -1,25 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import CheckboxColumn from './CheckboxColumn.jsx'
 import BarCharts from './BarCharts.jsx'
-const jsonData = require('../data.json')
+import { titlesList, genresList, networksList, hometownsList } from '../helpers.js'
 
-const GlobalFilter = (props) => {
+const Global = () => {
+  // States to handle user checkbox input, these arrays are passed onto
+  // Bar Chart components where they're used to select for specific data
   const [titles, setTitles] = useState([])
   const [genres, setGenres] = useState([])
   const [networks, setNetworks] = useState([])
   const [hometowns, setHometowns] = useState([])
-  // const [totalViewers, setTotalViewers] = useState()
 
-  // useEffect(() => {
-  //   let newTotal = 0
-  //   jsonData.forEach((row) => {
-  //     if(titles.includes(row.title) || genres.includes(row.genre) || networks.includes(row.network) || hometowns.includes(row.hometown)) {
-  //       newTotal += row.numViewers
-  //     }
-  //   })
-  //   setTotalViewers(newTotal)
-  // }, [titles, genres, networks, hometowns])
-
+  // Abstracted method that handles all checkbox inputs and binds them to state
   const handleCheckboxChange = ({ target }) => {
 
     if (target.dataset.column === 'titles') {
@@ -57,22 +49,17 @@ const GlobalFilter = (props) => {
         setHometowns([...hometowns, target.value])
       }
     }
-    
-  }
 
-  const titlesList = ['steelersTonight', 'theDawgPound', 'theExpanse', 'starTrekDiscovery', 'twilightZone', 'crimePatrol', 'forensicFiles']
-  const genresList = ['sports', 'scienceFiction', 'mystery']
-  const networksList = ['cbs', 'abc', 'syfy']
-  const hometownsList = ['pittsburgh', 'newYork', 'boston', 'cleveland']
+  }
   
   return (
-    <div style={{ marginBottom: '100px'}}>
-      <h1>Global Filter</h1>
-      <div style={{display: 'flex', marginBottom: '24px', justifyContent: 'space-between'}}>
+    <div className="global-container" style={{ marginBottom: '56px'}}>
+      <h1 className="global-title">Global Filter</h1>
+      <div style={{display: 'flex', marginBottom: '32px', justifyContent: 'space-between'}}>
         
         {/* Title */}
         <div className="checkbox-column">
-          <h4>Title</h4>
+          <h4 className="column-name">Title</h4>
           {titlesList.map((entry) => (
             <CheckboxColumn
                 columnName="titles"
@@ -85,7 +72,7 @@ const GlobalFilter = (props) => {
 
         {/* Genre */}
         <div className="checkbox-column">
-          <h4>Genre</h4>
+          <h4 className="column-name">Genre</h4>
           {genresList.map((entry) => (
             <CheckboxColumn
                 columnName="genres"
@@ -98,7 +85,7 @@ const GlobalFilter = (props) => {
 
         {/* NetWork */}
         <div className="filter-column">
-          <h4>Network</h4>
+          <h4 className="column-name">Network</h4>
           {networksList.map((entry) => (
             <CheckboxColumn
                 columnName="networks"
@@ -111,7 +98,7 @@ const GlobalFilter = (props) => {
 
         {/* Hometown */}
         <div className="filter-column">
-          <h4>Viewer Hometown</h4>
+          <h4 className="column-name">Viewer Hometown</h4>
           {hometownsList.map((entry) => (
             <CheckboxColumn
                 columnName="hometowns"
@@ -122,6 +109,7 @@ const GlobalFilter = (props) => {
           ))}
         </div>
       </div>
+      {/* User input/state is passed into the Bar Charts */}
       <BarCharts
           titles={titles}
           genres={genres}
@@ -132,4 +120,4 @@ const GlobalFilter = (props) => {
   )
 }
 
-export default GlobalFilter
+export default Global

@@ -1,3 +1,81 @@
+div#root {
+  display: flex;
+  justify-content: center;
+  background-color: #1d031e;
+}
+
 .App {
-  
+  padding: 48px;
+  background-color: #1d031e;
+  width: 100%;
+  max-width: 1300px;
+}
+
+h1.header-title {
+  color: white;
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+/* Shared Card Styles */
+
+.global-container, .comparative-container {
+  background-color: white;
+  padding: 24px 32px;
+  border: 3px solid #C04375;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 0.35rem #A9C4C6);
+}
+
+.global-title, .comparative-title {
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #1B1A40;
+}
+
+/* Global Card */
+
+.global-container { padding-bottom: 64px; }
+
+h4.column-name { margin-bottom: 4px; }
+
+label {
+  font-size: 14px;
+  margin-left: 2px;
+}
+
+.checkbox-wrapper {
+  display: flex;
+}
+
+h3.viewer-count {
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* Comparative Card */
+
+.comp-select-heading {
+  display: flex;
+  margin-bottom: 32px;
+}
+.comp-select-heading select {
+  margin: 0px 8px;
+  font-family: 'Alata', sans-serif;
+  font-size: 1.25em;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 0.25rem #facfe0);
+  border-top: 3px solid #155B77;
+  border-right: 3px solid #155B77;
+  border-left: 3px solid #A9C4C6;
+  border-bottom: 3px solid #A9C4C6;
+}
+
+.comp-select-heading select:hover {
+  cursor: pointer;
+  filter: drop-shadow(0 0 0.40rem #facfe0);
+  border-top: 3px solid #A9C4C6;
+  border-right: 3px solid #A9C4C6;
+  border-left: 3px solid #155B77;
+  border-bottom: 3px solid #155B77;
 }
