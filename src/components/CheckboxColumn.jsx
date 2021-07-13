@@ -8,11 +8,12 @@ const CheckboxColumn = ({ columnName, handleCheckboxChange, inputName, stateName
   return (
     <div className="checkbox-wrapper">
       <input
-          data-column={columnName}
           checked={stateName.includes(inputName)}
+          data-column={columnName}
+          id={inputName}
+          name={inputName}
           onChange={handleCheckboxChange}
           type="checkbox"
-          name={inputName}
           value={inputName}
       />
       <label htmlFor={inputName}>{namingDictionary[inputName]}</label>

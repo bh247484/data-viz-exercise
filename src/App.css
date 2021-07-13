@@ -3,14 +3,12 @@ div#root {
   justify-content: center;
   background-color: #1d031e;
 }
-
 .App {
   padding: 48px;
   background-color: #1d031e;
   width: 100%;
   max-width: 1300px;
 }
-
 .header-title {
   display: flex;
   align-items: center;
@@ -29,7 +27,6 @@ div#root {
   border-radius: 10px;
   filter: drop-shadow(0 0 0.35rem #A9C4C6);
 }
-
 .global-title, .comparative-title {
   margin-bottom: 24px;
   padding-bottom: 8px;
@@ -39,18 +36,17 @@ div#root {
 /* Global Card */
 
 .global-container { padding-bottom: 64px; }
-
-h4.column-name { margin-bottom: 4px; }
-
+h2.column-name { margin-bottom: 4px; }
 label {
   font-size: 14px;
   margin-left: 2px;
 }
-
 .checkbox-wrapper {
   display: flex;
 }
-
+.checkbox-wrapper input, .checkbox-wrapper label {
+  cursor: pointer;
+}
 h3.viewer-count {
   text-align: center;
   margin-top: 16px;
@@ -73,7 +69,6 @@ h3.viewer-count {
   border-left: 3px solid #A9C4C6;
   border-bottom: 3px solid #A9C4C6;
 }
-
 .comp-select-heading select:hover {
   cursor: pointer;
   filter: drop-shadow(0 0 0.40rem #facfe0);
@@ -82,3 +77,4 @@ h3.viewer-count {
   border-left: 3px solid #155B77;
   border-bottom: 3px solid #155B77;
 }
+.comp-select-heading select:active, .comp-select-heading select:focus { outline: none; }

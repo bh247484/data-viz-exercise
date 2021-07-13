@@ -59,7 +59,7 @@ const Global = () => {
         
         {/* Title */}
         <div className="checkbox-column">
-          <h4 className="column-name">Title</h4>
+          <h2 className="column-name">Title</h2>
           {titlesList.map((entry) => (
             <CheckboxColumn
                 columnName="titles"
@@ -72,7 +72,7 @@ const Global = () => {
 
         {/* Genre */}
         <div className="checkbox-column">
-          <h4 className="column-name">Genre</h4>
+          <h2 className="column-name">Genre</h2>
           {genresList.map((entry) => (
             <CheckboxColumn
                 columnName="genres"
@@ -85,7 +85,7 @@ const Global = () => {
 
         {/* NetWork */}
         <div className="filter-column">
-          <h4 className="column-name">Network</h4>
+          <h2 className="column-name">Network</h2>
           {networksList.map((entry) => (
             <CheckboxColumn
                 columnName="networks"
@@ -98,7 +98,7 @@ const Global = () => {
 
         {/* Hometown */}
         <div className="filter-column">
-          <h4 className="column-name">Viewer Hometown</h4>
+          <h2 className="column-name">Viewer Hometown</h2>
           {hometownsList.map((entry) => (
             <CheckboxColumn
                 columnName="hometowns"
