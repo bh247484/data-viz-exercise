@@ -39,6 +39,7 @@ const BarCharts = ({ titles, genres, networks, hometowns }) => {
     }
   })
   // Total viewers in selected data, outputted below bar charts on page
+  // Adds all values in data object with .reduce() array method
   const titlesTotal = Object.values(titlesData).reduce((a,b) => a + b, 0)
 
   const genresSet = Object.entries(genresData).map((entry, index) => {
