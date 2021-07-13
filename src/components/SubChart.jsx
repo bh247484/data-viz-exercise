@@ -1,5 +1,6 @@
 import React from 'react'
 import { Doughnut } from 'react-chartjs-2'
+import { namingDictionary } from '../helpers.js'
 const jsonData = require('../data.json')
 
 const SubChart = ({ parentCategory, categoryKey, chartCategory }) => {
@@ -12,18 +13,14 @@ const SubChart = ({ parentCategory, categoryKey, chartCategory }) => {
       chartData[row[chartCategory]] = row.numViewers
     }
   })
-  console.log(Object.values(chartData))
 
   
   const formattedLabels = Object.keys(chartData).map((label) => {
-    return label.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })
-    // if(label.length === 3) {
-    //   label.toLocaleUpperCase()
-    // }
+    return namingDictionary[label]
   })
 
   const data = {
-    labels: formattedLabels.map(label => label.length === 3 ? label.toUpperCase() : label),
+    labels: formattedLabels,
     datasets: [{
       label: 'Test',
       data: Object.values(chartData),
@@ -40,8 +37,9 @@ const SubChart = ({ parentCategory, categoryKey, chartCategory }) => {
             options={{
               plugins: {
                 legend: {
-                  position: 'top',
+                  position: 'bottom',
                   labels: {
+                    boxHeight: 10,
                     boxWidth: 10,
                   }
                 }
