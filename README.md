@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Data Visualization Exercise
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### How to Spin Up
+1. Run `yarn install` in root folder to install dependencies
+2. Run `yarn start` to spin up server on `localhost:3000`
 
-## Available Scripts
+### Screenshot and Video
+![app_screenshot](https://user-images.githubusercontent.com/57693937/125630625-f3668008-f078-4f41-8ebd-16591814895d.jpg)
 
-In the project directory, you can run:
+https://user-images.githubusercontent.com/57693937/125634378-72dea37d-fde7-41c3-82e5-4bb3b9bfc5e5.mp4
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Process
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This is a vanilla React app with only [chartjs](https://www.chartjs.org/) and [react-chartjs-2](https://github.com/reactchartjs/react-chartjs-2) (a React wrapper for chartjs) as dependencies.  I also considered [these](https://uber.github.io/react-vis/) [two](https://airbnb.io/visx/) charting libraries from Uber and Airbnb but ultimately chose chartjs for it's simplicity.  All styling is done with vanilla CSS, no design system libraries are included.
 
-### `yarn test`
+I converted CSV row data to JSON objects for ease of use and used React state to manage user input and slice/combine datasets.  Working within the limitations of the charting library I chose two charts to visualize data.  A stacked bar chart to measure viewership numbers within columns and a donut/pie chart to compare percentages/proportions across columns.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I was able to achieve those fairly complex interactions with 5 reasonably sized, strategically encapsulated React components.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Potential Optimizations
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Code
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Improve naming conventions.  Was moving quickly, some of the variable and method names are oblique/unhelpful.  User facing naming conventions also need refinement.
 
-### `yarn eject`
+2. Preprocess incoming data.  Some data is being processed and reprocessed inefficiently during React re-renders.  Might not scale well if the data set is much larger.  Could make an initial query and preprocess/prepare the data during page load.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### UX
+1. More focused analysis.  Data analysis may actually be too flexible (over anticipating use cases)?  Limiting/focusing what the user can do would result in a better experience/more useful app.  Could be solved by a meeting with stakeholders, i.e. ask what kind of comparisons/dashboards would be most valuable to them.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Create select all and deselect all buttons beneath the checkbox columns.  It’s a bit tedious to click each checkbox when you want an entire column selected.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Design
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Address bar chart height resizing.  The legend compresses the bar charts height.  Ideally each chart would be a column in the same chart (i.e. one chart with 4 horizontal bars, not 4 separate charts).  I had to work with the limitations of the charting library.
 
-## Learn More
+2. Improve checkbox column alignment.  The checkbox columns are sort of floating and aren’t effectively associated with their corresponding charts.  Lots of whitespace between them.  Might be worth finding a different way to get multi-select user input altogether.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Checkbox colors.  The checkbox colors cannot be overridden by css in the browser.  Have created custom checkboxes in the past but it’s time intensive.  Felt my time was better spent elsewhere on this project.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. Not mobile friendly.
